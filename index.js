@@ -16,7 +16,7 @@ const newspapers =[
     },
     {
         name: 'telegraph',
-        website: "https://www.thetimes.co.uk/environment/climate-change"
+        website: "https://www.telegraph.co.uk/climate-change"
     },
 ]
 
