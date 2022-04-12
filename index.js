@@ -9,14 +9,17 @@ const newspapers = [
   {
     name: "thetimes",
     website: "https://www.thetimes.co.uk/environment/climate-change",
+    base: ''
   },
   {
     name: "gaurdian",
     website: "https://www.theguardian.com/environment/climate-crisis",
+    base: ''
   },
   {
     name: "telegraph",
     website: "https://www.telegraph.co.uk/climate-change",
+    base: 'https://www.telegraph.co.uk'
   },
 ];
 app.listen(PORT, () => console.log(`server is running on PORT ${PORT}`));
@@ -30,11 +33,11 @@ newspapers.forEach((newspaper) => {
 
     $('a:contains("climate")', html).each(function () {
       const title = $(this).text();
-      const url = $(this).attr("html");
+      const url = $(this).attr("href");
 
       articles.push({
         title,
-        url,
+        url: newspaper.base + url,
         source: newspaper.name,
       });
     });
